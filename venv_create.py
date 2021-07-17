@@ -2,7 +2,6 @@
 """Create a virtualenv, python version and write .python-version file"""
 import os
 import subprocess
-from typing import List
 from sys import argv, exit
 
 
@@ -30,7 +29,7 @@ def _read_version_file():
 def write_to_version_file(venv_name: str):
     try:
         with open('.python-version', 'x') as f:
-           f.write(venv_name)
+            f.write(venv_name)
     except FileExistsError:
         print(f".python-version already exists with version {_read_version_file()}")
         exit(1)
